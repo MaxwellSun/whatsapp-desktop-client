@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25FEEDCE-67F1-4FD8-A0B1-F8AFB90B88C6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WhatsappClient</RootNamespace>
+    <AssemblyName>WhatsappClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\whatsapp_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WhatsappClient.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ContactCollection.cs" />
+    <Compile Include="Classes\Contact.cs" />
+    <Compile Include="Classes\WhatsAppAccount.cs" />
+    <Compile Include="Classes\DirtyHttp.cs" />
+    <Compile Include="Classes\SQLiteDatabase.cs" />
+    <Compile Include="Forms\Form_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\ThreadedMethod.cs" />
+    <Compile Include="Classes\WhatsAppHelper.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\AccountInfo.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\BinTreeNodeReader.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\BinTreeNodeWriter.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\DecodeHelper.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\DisconnectedException.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\Encryption.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\Func.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\IncompleteMessageException.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\KeyValue.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\ProtocolTreeNode.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\RC4.cs" />
+    <Compile Include="WhatsAppProtocol\Helper Classes\TicketManager.cs" />
+    <Compile Include="WhatsAppProtocol\Parser\FMessage.cs" />
+    <Compile Include="WhatsAppProtocol\Parser\FMessageVisitor.cs" />
+    <Compile Include="WhatsAppProtocol\Parser\GroupSetting.cs" />
+    <Compile Include="WhatsAppProtocol\Response\CorruptStreamException.cs" />
+    <Compile Include="WhatsAppProtocol\Response\MessageRecvResponse.cs" />
+    <Compile Include="WhatsAppProtocol\Response\WhatsEventHandler.cs" />
+    <Compile Include="WhatsAppProtocol\Response\WhatsParser.cs" />
+    <Compile Include="WhatsAppProtocol\WhatsAppProtocol.cs" />
+    <Compile Include="WhatsAppProtocol\WhatsContstants.cs" />
+    <Compile Include="WhatsAppProtocol\WhatsNetwork.cs" />
+    <Compile Include="WhatsAppProtocol\WhatsSendHandler.cs" />
+    <EmbeddedResource Include="Forms\Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Main.resx">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\whatsapp_icon.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
