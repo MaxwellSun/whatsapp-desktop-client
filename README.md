@@ -14,6 +14,8 @@ Documentation?
 To prevent the project from becoming a mess, you are obliged as a member of the development team to keep extended documentation of the code and your work. If you are a developer you should know how to add in-document documentation. We use a program called 'Doxygen' which generates a complete documentation based on comments in the code. You can find the latest version of the documentation here:
 
 http://wclient.netne.net/class_whats_app_helper.html
+
+
 Language
 
 We use C# as our primary programming language. In the beginning we were about to choose C++ as our primary language. We were also thinking about making something cross-platform. The problem was that Java is to insecure, C# can be cross-compiled using the Mono framework, but it's far from perfect. Writing in C++ would be a pain in the ass to make sure it's Operating System independent. After some debating we came to the conclusion that C# would be the best choice. We decided to drop the cross-platform idea and focus on create something working. C# is fast and easy to code, a programmer can produce more and better code in C# in less time then in C++. This is why our primary programming language is C#. We use Microsoft Visual Studio as our IDE and our applications are written using the .NET Framework 4.0.
